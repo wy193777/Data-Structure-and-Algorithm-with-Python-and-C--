@@ -1,5 +1,5 @@
 # Deck.py
-from random import randrange
+import random
 from Card import Card
 
 
@@ -13,20 +13,21 @@ class Deck(object):
         self.cards = cards
 
     def size(self):
-        return len(self.card)
+        return len(self.cards)
 
     def deal(self):
         return self.cards.pop()
 
     def shuffle(self):
-        cards0 = self.cards
-        cards1 = []
-        while cards0 != []:
-            pos = randrange(len(cards0))
-            card = cards0.pop(pos)
-            cards1.append(card)
+        #cards0 = self.cards
+        #cards1 = []
+        #while cards0 != []:
+            #pos = randrange(len(cards0))
+            #card = cards0.pop(pos)
+            #cards1.append(card)
 
-        self.cards = cards1
+        #self.cards = cards1
+        random.shuffle(self.cards)
 
     def sort(self):
         cards0 = self.cards
