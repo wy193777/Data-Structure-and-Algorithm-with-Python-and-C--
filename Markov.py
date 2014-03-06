@@ -1,3 +1,6 @@
+import random
+
+
 class Markov(object):
 
     """A simple trigram Markov model. The current state is a sequence of the
