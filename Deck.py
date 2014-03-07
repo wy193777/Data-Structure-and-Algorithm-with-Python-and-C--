@@ -38,6 +38,24 @@ class Deck(object):
             cards1.append(next_card)
         self.cards = cards1
 
-        #self.cards.sort()
-        #self.cards.reverse()
+    def addTop(self, card):
+        self.cards.insert(0, card)
 
+    def addBottom(self, card):
+        self.cards.append(card)
+
+    def addRandom(self, card):
+        card.insert(random.randrange(len(card), card))
+
+    def __str__(self):
+        deck = []
+        for card in self.cards:
+            deck.append(card.rankName() + " of " + card.suitName())
+        return "\n".join(deck)
+
+
+d = Deck()
+print(d)
+print(d.size())
+d.shuffle()
+print(d)
